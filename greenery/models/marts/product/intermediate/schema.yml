@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: product_orders_agg
+    description: number of daily orders per product
+    config:
+      materialized: view
+
+  - name: product_page_views_agg
+    description: number of daily page views per product
+    config:
+      materialized: view

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: order_items_agg
+    description: statistic of each order 
+    config:
+      materialized: view
+
+  - name: user_performance
+    description: statistic and performance of each user
+    config:
+      materialized: view
+
+  - name: promo_discount
+    description: compute the discount amount and the final order total cost
+    config:
+      materialized: view
