@@ -5,11 +5,11 @@
 }}
 
 with product_page_views_agg as (
-select * from {{ref('product_page_views_agg')}}
+select * from {{ref('int_product_page_views')}}
 )
 
 , product_orders_agg as (
-    select * from {{ref('product_orders_agg')}}
+    select * from {{ref('int_product_orders')}}
 )
 
 select 

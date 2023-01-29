@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: int_order_items
+    description: statistic of each order 
+    config:
+      materialized: view
+
+  - name: int_user_performance
+    description: statistic and performance of each user
+    config:
+      materialized: view
+
+  - name: int_promo_discount
+    description: compute the discount amount and the final order total cost
+    config:
+      materialized: view
+
+  - name: int_product_orders
+    description: number of daily orders per product
+    config:
+      materialized: view
+
+  - name: int_product_page_views
+    description: number of daily page views per product
+    config:
+      materialized: view

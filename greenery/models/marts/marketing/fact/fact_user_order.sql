@@ -4,16 +4,25 @@
   )
 }}
 
-with order_items as (
-    select * from {{ ref('order_items_agg') }}
+
+with orders as (
+    select * from {{ ref('stg_postgres__orders') }}
+  )
+
+, users as (
+    select * from {{ ref('stg_postgres__users') }}
+  )
+
+, order_items as (
+    select * from {{ ref('int_order_items') }}
   )
 
 , user_performance as (
-    select * from {{ ref('user_performance') }}
+    select * from {{ ref('int_user_performance') }}
   )
   
 , promo_discount as (
-    select * from {{ ref('promo_discount') }}
+    select * from {{ ref('int_promo_discount') }}
   )
 
 select 
@@ -30,10 +39,10 @@ select
     , sum(pr.discount_amount) as discount_amount
     , sum(o.order_total_cost) - sum(pr.discount_amount) as total_spend
 
-from {{ ref('stg_postgres__orders') }}  o 
-left join {{ ref('stg_postgres__users') }} u on u.user_id = o.user_id
+from orders o 
+left join users u on u.user_id = o.user_id
 left join order_items i on i.order_id = o.order_id
 left join user_performance up on up.user_id = o.user_id
 left join promo_discount pr on pr.order_id = o.order_id
-group by 1,2,3,4,5,6
+{{ group_by(6) }}
 

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fact_orders
+    columns:
+      - name: price
+        tests:
+          - positive_values
+      - name: quantity
+        tests:
+          - positive_values

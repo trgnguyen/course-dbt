@@ -1,3 +1,12 @@
+with users as ( 
+   select * from {{ ref('stg_postgres__users') }}
+)
+
+, addresses as ( 
+   select * from {{ ref('stg_postgres__addresses') }}
+)
+
+
 select 
   user_id
   , first_name
@@ -11,5 +20,5 @@ select
   , country
   , user_created_at
   , user_updated_at
-from {{ ref('stg_postgres__users') }} u 
-left join {{ ref('stg_postgres__addresses') }} a on a.address_id = u.address_id 
+from users u 
+left join addresses a on a.address_id = u.address_id 
