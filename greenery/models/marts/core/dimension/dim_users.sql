@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with users as ( 
    select * from {{ ref('stg_postgres__users') }}
 )

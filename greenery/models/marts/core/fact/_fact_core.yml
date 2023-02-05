@@ -3,9 +3,30 @@ version: 2
 models:
   - name: fact_orders
     columns:
+      - name: order_id
+
+      - name: order_created_at
+
+      - name: user_id
+
+      - name: first_name
+
+      - name: last_name
+
+      - name: email
+
+      - name: product_id
+
+      - name: product_name
+
       - name: price
         tests:
           - positive_values
+
       - name: quantity
         tests:
           - positive_values
+
+      - name: promo_id
+
+      - name: order_status

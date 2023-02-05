@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with products as ( 
    select * from {{ ref('stg_postgres__products') }}
 )

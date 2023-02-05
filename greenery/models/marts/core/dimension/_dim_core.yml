@@ -2,12 +2,43 @@ version: 2
 
 models:
   - name: dim_products
+    description: this table is our product dimension
     columns: 
       - name: product_id
         tests:
           - unique_counts
+
+      - name: product_name
+
+      - name: price
+
+      - name: inventory
+
   - name: dim_users
+    description: this table is our user dimension
     columns: 
       - name: user_id
         tests:
           - unique_counts
+
+      - name: first_name
+
+      - name: last_name
+
+      - name: email
+
+      - name: phone_number
+
+      - name: address_id
+
+      - name: address
+
+      - name: zip_code
+
+      - name: state
+
+      - name: country
+
+      - name: user_created_at
+
+      - name: user_updated_at

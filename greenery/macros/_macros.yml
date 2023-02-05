@@ -2,7 +2,15 @@ version: 2
 
 macros:
   - name: positive_values
+    description: this macro is used to test whether the column has negative value
+
   - name: case_agg
-  - name: group_by
+    description: this macro is used to aggregate different type of events
+
   - name: grant
+    description: this macros is used to grant roles 
+
   - name: unique_counts
+    description: this macro is used to test whether the dataset has duplicated ID
+  
+  - name: group_by

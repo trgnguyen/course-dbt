@@ -1,0 +1,14 @@
+version: 2
+
+exposures:  
+  - name: Product Funnel Dashboard
+    description: >
+      Model shows our overall product funnel and conversion rate
+    type: dashboard
+    url: https://app.sigmacomputing.com/corise-dbt/workbook/workbook-7fNfbtqpoF1VXFynYPWTC6
+    maturity: high
+    owner:
+      name: Trang Nguyen
+      email: trang@greenery.com
+    depends_on:
+      - ref('fact_conversion_rate')

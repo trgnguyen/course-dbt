@@ -20,11 +20,6 @@ with orders as (
    select * from {{ ref('dim_users') }}
 )
 
-, promos as ( 
-   select * from {{ ref('stg_postgres__promos') }}
-)
-
-
 select 
     o.order_id
     , o.order_created_at
@@ -42,4 +37,3 @@ from orders o
 left join order_items i on i.order_id = o.order_id
 left join products p on i.product_id = p.product_id
 left join users u on u.user_id = o.user_id
-left join promos pr on pr.promo_id = o.promo_id

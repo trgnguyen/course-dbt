@@ -21,6 +21,7 @@ select
     , i.product_id
     , p.product_name
     , sum(quantity) order_quantity
+    , count(distinct o.order_id) order_count
 from  orders  o 
 left join order_items i on i.order_id = o.order_id
 left join products p on i.product_id = p.product_id

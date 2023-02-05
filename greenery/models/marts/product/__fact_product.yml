@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: fact_products
+    description: this table shows our products' performance on a daily basis at greenery
+    columns:
+      - name: date
+
+      - name: product_id
+
+      - name: product_name
+
+      - name: page_view
+
+      - name: order_quantity
+
+      - name: order_count
+
+      - name: revenue
+      
+
+  - name: fact_conversion_rate
+    description: this table shows the product funnel at greenery
+    columns:
+      - name: product_id
+
+      - name: product_name
+
+      - name: session_id
+
+      - name: total_sessions
+
+      - name: page_view
+
+      - name: add_to_cart
+
+      - name: check_out
+
+      - name: package_shipped
